@@ -1,0 +1,43 @@
+name: random_quote
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/json/
+
+
+
+  fonts:
+    - family: Cookie-Regular
+      fonts:
+        - asset: assets/font/Cookie-Regular.ttf
+
+    - family: DancingScript-VariableFont_wght
+      fonts:
+        - asset: assets/font/DancingScript-VariableFont_wght.ttf
+
+    - family: FugazOne-Regular
+      fonts:
+        - asset: assets/font/FugazOne-Regular.ttf
+
+
