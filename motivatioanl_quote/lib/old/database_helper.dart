@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-import 'package:motivatioanl_quote/Quote.dart';
+import 'package:motivatioanl_quote/old/Quote.dart';
 
 class DataBaseHelper {
   static Database _db;

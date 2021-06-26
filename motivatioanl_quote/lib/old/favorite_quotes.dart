@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:motivatioanl_quote/Quote.dart';
-import 'package:motivatioanl_quote/database_helper.dart';
+import 'package:motivatioanl_quote/old/Quote.dart';
+import 'package:motivatioanl_quote/old/database_helper.dart';
 
 class FavoriteQuotes extends StatefulWidget {
   @override

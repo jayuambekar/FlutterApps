@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:share/share.dart';
 
-import 'package:motivatioanl_quote/Quote.dart';
-import 'package:motivatioanl_quote/database_helper.dart';
+import 'package:motivatioanl_quote/old/Quote.dart';
+import 'package:motivatioanl_quote/old/database_helper.dart';
 
 class QuoteData extends StatefulWidget {
   @override
