@@ -13,7 +13,8 @@ class Quotes {
   List<Quote> _quotes = [];
   int quoteIndex = 0;
   Future loadQuote() async {
-    var url = Uri.https('api.quotable.io', '/random');
+    var url = Uri.https('api.quotable.io', '/random', {'maxLength': '200'});
+
     var response = await http.get(url);
     if (response.statusCode == 200) {
       dynamic data = jsonDecode(response.body);

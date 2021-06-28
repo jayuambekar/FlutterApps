@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:motivatioanl_quote/services/quotes.dart';
 
 class QuotePage extends StatelessWidget {
@@ -7,35 +8,43 @@ class QuotePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                quote.quote,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.pink,
-                    fontFamily: 'Playball',
-                    fontSize: 30.0),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('images/back1.jpg'),
+          fit: BoxFit.cover,
+
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(30.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              '"${quote.quote}"',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.courgette(
+                textStyle: TextStyle(
+                  fontSize: 35,
+                  color: Colors.pink,
+                  //fontWeight: FontWeight.bold,
+                ),
               ),
-              SizedBox(
-                height: 50,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              "- ${quote.author}",
+              style: GoogleFonts.cookie(
+                textStyle: TextStyle(
+                  fontSize: 35,
+                  color: Colors.lightBlue,
+                ),
               ),
-              Text(
-                "- ${quote.author}",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
-                    fontFamily: 'Pacifico-Regular',
-                    fontSize: 25.0),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

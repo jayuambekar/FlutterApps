@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
           Stack(children: <Widget>[
             Center(
               child: Image.asset(
-                'images/background2.jpg',
+                'images/back1.jpg',
                 width: size.width,
                 height: size.height,
                 fit: BoxFit.fill,

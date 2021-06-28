@@ -19,6 +19,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   List<QuotePage> _quotePages = [];
+  int _selectedPageIndex = 0;
+  PageController controller = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,17 +29,21 @@ class _HomePageState extends State<HomePage> {
           child: PageView(
             children: _quotePages,
             onPageChanged: (pageid) {
+              _selectedPageIndex = pageid;
               if (pageid == _quotePages.length - 1) {
                 _quotePages.add(QuotePage(quote: widget.quotes.getNextQuote()));
               }
               setState(() {});
             },
+            controller: controller,
           ),
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.blueAccent,
-        child: BottomBar(),
+        child: BottomBar(
+          currentQuotePage: _quotePages[_selectedPageIndex],
+        ),
       ),
     );
   }
