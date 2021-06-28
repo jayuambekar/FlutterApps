@@ -19,7 +19,7 @@ class Quotes {
     if (response.statusCode == 200) {
       dynamic data = jsonDecode(response.body);
       _quotes.add(Quote(quote: data['content'], author: data['author']));
-      print("Added Quote: ${_quotes.length}");
+      //print("Added Quote: ${_quotes.length}");
     } else {
       throw Exception('Failed to load Quote');
     }
@@ -27,7 +27,7 @@ class Quotes {
 
   Quote getNextQuote() {
     Quote quote;
-    print("Requested: $quoteIndex, Total: ${_quotes.length}");
+    //print("Requested: $quoteIndex, Total: ${_quotes.length}");
     if (quoteIndex < _quotes.length) {
       quote = _quotes[quoteIndex];
       quoteIndex++;

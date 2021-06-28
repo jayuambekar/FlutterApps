@@ -9,10 +9,13 @@ class QuotePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('images/back1.jpg'),
-          fit: BoxFit.cover,
-
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.grey[100],
+            Colors.deepPurple[100],
+          ],
         ),
       ),
       child: Padding(

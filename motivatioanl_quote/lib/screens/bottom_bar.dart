@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:motivatioanl_quote/screens/quote_page.dart';
 import 'package:share/share.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BottomBar extends StatelessWidget {
   BottomBar({@required this.currentQuotePage});
@@ -27,12 +30,26 @@ class BottomBar extends StatelessWidget {
                     '"${currentQuotePage.quote.quote}" - ${currentQuotePage.quote.author}',
               );
               final snackBarContent = SnackBar(
+                backgroundColor: Colors.grey[300],
+                elevation: 10,
+                duration: const Duration(seconds: 1),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                ),
+                behavior: SnackBarBehavior.floating,
+                margin: EdgeInsets.only(right: 70.0, left: 70.0, bottom: 10.0),
                 content: Text(
-                  "Copied to Clipboard",
-                  style: TextStyle(color: Colors.white, fontSize: 15.0),
+                  "Copied",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
               );
-              //currentQuotePage.of(context).showSnakBar(snackBarContent);
+              ScaffoldMessenger.of(context).showSnackBar(snackBarContent);
               Clipboard.setData(copiedData);
             },
           ),
@@ -59,7 +76,7 @@ class BottomBar extends StatelessWidget {
               ),
               iconSize: 40.0,
               onPressed: () {
-                print("shared");
+                //print("shared");
                 Share.share(
                     '${currentQuotePage.quote.quote} -- ${currentQuotePage.quote.author}');
               }),
