@@ -23,7 +23,7 @@ class QuoteWidget extends StatelessWidget {
             flex: 2,
           ),
           Image.asset(
-            "assets/quote.png",
+            "assets/quote.jpg",
             height: 30,
             width: 30,
             color: Colors.white,

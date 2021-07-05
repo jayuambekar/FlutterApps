@@ -12,20 +12,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var apiURL =
-      Uri.https('favqs.com', '/api/qotd'); //"https://type.fit/api/quotes";
-
+      Uri.https('type.fit', '/api/quotes'); //"https://type.fit/api/quotes";
   Future<List<dynamic>> getPost() async {
     final response = await http.get(apiURL);
-    if (response.statusCode == 200) {
-      return postFromJson(response.body);
-    } else {
-      throw Exception('Failed to load Quote');
-    }
+    return postFromJson(response.body);
   }
 
   List<dynamic> postFromJson(String str) {
     List<dynamic> jsonData = json.decode(str);
     jsonData.shuffle();
+    print(jsonData.length);
     return jsonData;
   }
 

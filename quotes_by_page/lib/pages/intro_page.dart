@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quotes_by_page/pages/home_page.dart';
 
 import 'login_page.dart';
 
@@ -43,7 +44,7 @@ class IntroPage extends StatelessWidget {
               child: RaisedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+                      MaterialPageRoute(builder: (context) => HomePage()));
                 },
                 color: Colors.black,
                 textColor: Colors.white,
