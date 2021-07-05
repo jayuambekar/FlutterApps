@@ -10,11 +10,11 @@ class QuotePage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
           colors: [
-            Colors.grey[100],
-            Colors.deepPurple[100],
+            Colors.lightBlue[50],
+            Colors.yellow[100],
           ],
         ),
       ),

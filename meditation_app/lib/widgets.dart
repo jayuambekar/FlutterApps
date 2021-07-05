@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class PromoIcons extends StatelessWidget {
   final String assetName;
@@ -25,15 +26,15 @@ class Modes extends StatelessWidget {
 
   Modes(
       {this.background,
-        this.flexSize,
-        this.mgLeft,
-        this.mgRight,
-        this.mgTop,
-        this.mgBottom,
-        this.modeName,
-        this.assetImage,
-        this.buttonAsset,
-        this.openMode});
+      this.flexSize,
+      this.mgLeft,
+      this.mgRight,
+      this.mgTop,
+      this.mgBottom,
+      this.modeName,
+      this.assetImage,
+      this.buttonAsset,
+      this.openMode});
 
   @override
   Widget build(BuildContext context) {
@@ -133,14 +134,6 @@ class Appbar extends StatelessWidget {
             margin: EdgeInsets.only(top: 8),
             child: Row(
               children: [
-                Container(
-                  height: 25,
-                  width: 30,
-                  child: Image.asset("assets/images/stats.png"),
-                ),
-                SizedBox(
-                  width: 40,
-                ),
                 GestureDetector(
                   onTap: () => Navigator.of(context).pop(),
                   child: Container(
@@ -217,7 +210,73 @@ class ModeBody extends StatelessWidget {
                       ),
                       Container(
                         padding:
-                        EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 18),
+                        width: 120,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.all(3),
+                              padding: EdgeInsets.only(bottom: 2),
+                              height: 25,
+                              width: 20,
+                              child: Image.asset("assets/images/circle.png"),
+                            ),
+                            Text(
+                              "PLAY",
+                              style: TextStyle(
+                                fontFamily: "Josefin",
+                                fontSize: 25,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Stack(
+                        children: [
+                          Container(
+                            height: 100,
+                            child: Image.asset("assets/images/trithin.png"),
+                          ),
+                          Positioned(
+                            top: 50,
+                            left: 40,
+                            child: Text(
+                              "15",
+                              style: TextStyle(
+                                fontFamily: "Josefin",
+                                fontSize: 30,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "15 min",
+                        style: TextStyle(
+                          fontFamily: "Josefin",
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10, vertical: 18),
                         width: 120,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -264,7 +323,7 @@ class ModeBody extends StatelessWidget {
                 Container(
                   height: 20,
                   width: 20,
-                  child: Image.asset("assets/images/equalizer.png"),
+                  child: Image.asset("assets/images/clock.png"),
                 ),
               ],
             ),

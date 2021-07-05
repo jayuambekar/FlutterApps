@@ -4,6 +4,7 @@ import 'package:motivatioanl_quote/screens/home_page.dart';
 import 'package:motivatioanl_quote/services/quotes.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:motivatioanl_quote/utils/constants.dart';
 
 class PrimarySplashScreen extends StatefulWidget {
   @override
@@ -14,10 +15,7 @@ class _PrimarySplashScreenState extends State<PrimarySplashScreen> {
   Quotes quotes = Quotes();
 
   Future<Widget> loadHomePage() async {
-    //await Future.delayed(Duration(minutes: 5));
-    for (int i = 0; i < 2; i++) {
-      await quotes.loadQuote();
-    }
+    await quotes.loadQuote();
     return HomePage(
       quotes: quotes,
     );
@@ -35,7 +33,7 @@ class _PrimarySplashScreenState extends State<PrimarySplashScreen> {
       ),
 
       title: Text(
-        " Get Inspired ",
+        PAGE_HEADING,
         style: GoogleFonts.jomolhari(
           textStyle: TextStyle(
               fontSize: 45, color: Colors.black, fontWeight: FontWeight.bold),

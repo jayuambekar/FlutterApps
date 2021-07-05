@@ -78,7 +78,7 @@ class BottomBar extends StatelessWidget {
               onPressed: () {
                 //print("shared");
                 Share.share(
-                    '${currentQuotePage.quote.quote} -- ${currentQuotePage.quote.author}');
+                    '"${currentQuotePage.quote.quote}" - ${currentQuotePage.quote.author}');
               }),
         ],
       ),

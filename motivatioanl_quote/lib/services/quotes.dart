@@ -2,6 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/services.dart' as rootBundle;
+import 'dart:math';
+import 'package:motivatioanl_quote/utils/constants.dart';
 
 class Quote {
   Quote({@required this.quote, @required this.author});
@@ -11,8 +14,9 @@ class Quote {
 
 class Quotes {
   List<Quote> _quotes = [];
-  int quoteIndex = 0;
-  Future loadQuote() async {
+  Random numberGenerator = Random();
+
+  /*Future loadQuote() async {
     var url = Uri.https('api.quotable.io', '/random', {'maxLength': '200'});
 
     var response = await http.get(url);
@@ -23,19 +27,24 @@ class Quotes {
     } else {
       throw Exception('Failed to load Quote');
     }
+  }*/
+
+  Future loadQuote() async {
+    var response = await rootBundle.rootBundle.loadString('json/quotes.json');
+    dynamic data = jsonDecode(response);
+    for (dynamic quoteFromJson in data['results']) {
+      String content = quoteFromJson['content'];
+      if (content.length <= MAX_LENGTH_OF_QUOTE) {
+        _quotes.add(Quote(
+            quote: quoteFromJson['content'], author: quoteFromJson['author']));
+      }
+    }
+
+    print("Total number of quotes loaded: ${_quotes.length}");
   }
 
   Quote getNextQuote() {
-    Quote quote;
-    //print("Requested: $quoteIndex, Total: ${_quotes.length}");
-    if (quoteIndex < _quotes.length) {
-      quote = _quotes[quoteIndex];
-      quoteIndex++;
-    } else {
-      //FIXME: If quote not available then wait for it
-      quote = Quote(quote: "", author: "");
-    }
-    loadQuote();
-    return quote;
+    int quoteIndex = numberGenerator.nextInt(_quotes.length - 1);
+    return _quotes[quoteIndex];
   }
 }

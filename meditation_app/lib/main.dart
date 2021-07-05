@@ -5,6 +5,7 @@ import 'package:meditation_app/focus_mode.dart';
 import 'package:meditation_app/relaxation_mode.dart';
 import 'package:meditation_app/meditation_mode.dart';
 import 'package:meditation_app/sleep_mode.dart';
+import 'Demo.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,7 @@ class MyHomePage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/back.png"),
+            image: AssetImage("assets/images/back3.png"),
             fit: BoxFit.cover,
           ),
         ),
@@ -51,11 +52,11 @@ class MyHomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Every Day is a New Beginning",
+                          "Lets Celebrate a New Day",
                           style: TextStyle(
                               fontFamily: "Josefin",
                               fontSize: 25,
-                              color: Colors.purpleAccent,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
 
@@ -80,13 +81,14 @@ class MyHomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
-                                "Let's focus on our self",
+                                '"Focus on the right things "',
                                 style: TextStyle(
                                   fontFamily: "Josefin",
                                   fontSize: 25,
+                                  color: Colors.black,
                                 ),
                               ),
-                              Text("~~")
+
                             ],
                           ),
                         )
